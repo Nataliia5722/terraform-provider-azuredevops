@@ -222,6 +222,7 @@ github.com/mattn/go-colorable
 github.com/mattn/go-isatty
 # github.com/microsoft/azure-devops-go-api/azuredevops v1.0.0-b5
 ## explicit; go 1.12
+github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7/identity
 github.com/microsoft/azure-devops-go-api/azuredevops
 github.com/microsoft/azure-devops-go-api/azuredevops/system
 github.com/microsoft/azure-devops-go-api/azuredevops/webapi
