@@ -28,7 +28,7 @@ Please visit [Use personal access tokens](https://learn.microsoft.com/en-us/azur
 
 ## Configure Environment Variables
 
-Set the two environment variables. For more details, see the [Readme](https://github.com/microsoft/terraform-provider-azuredevops#terraform-provider-for-azure-devops-devops-resource-manager).
+Set the two environment variables. For more details, see the [Readme](https://github.com/Nataliia5722/terraform-provider-azuredevops#terraform-provider-for-azure-devops-devops-resource-manager).
 `AZDO_PERSONAL_ACCESS_TOKEN` and `AZDO_ORG_SERVICE_URL`. If you use bash, you can try this.
 
 ```sh

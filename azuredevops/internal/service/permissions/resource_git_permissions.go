@@ -6,11 +6,11 @@ import (
 	"regexp"
 	"strings"
 
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/client"
+	securityhelper "github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/service/permissions/utils"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/utils/converter"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/validation"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/client"
-	securityhelper "github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/service/permissions/utils"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/utils/converter"
 )
 
 // ResourceGitPermissions schema and implementation for Git repository permission resource

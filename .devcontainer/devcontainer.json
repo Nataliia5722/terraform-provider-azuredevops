@@ -1,5 +1,5 @@
 // For format details, see https://aka.ms/vscode-remote/devcontainer.json or the definition README at
-// https://github.com/microsoft/vscode-dev-containers/tree/master/containers/docker-existing-dockerfile
+// https://github.com/Nataliia5722/vscode-dev-containers/tree/master/containers/docker-existing-dockerfile
 {
 	"name": "Dev Dockerfile",
 	"dockerFile": "Dockerfile",

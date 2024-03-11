@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"log"
 
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/client"
+	securityhelper "github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/service/permissions/utils"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/validation"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/client"
-	securityhelper "github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/service/permissions/utils"
 )
 
 // ResourceServiceHookPermissions schema and implementation for servicehook permission resource

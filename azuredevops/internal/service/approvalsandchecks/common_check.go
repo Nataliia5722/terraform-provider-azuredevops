@@ -6,13 +6,13 @@ import (
 	"strings"
 	"time"
 
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/client"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/utils"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/utils/converter"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/utils/tfhelper"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/utils/pipelineschecksextras"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/validation"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/client"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/utils"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/utils/converter"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/utils/tfhelper"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/utils/pipelineschecksextras"
 )
 
 // NOTE: In theory the API should accept "agentpool" as well, but the API client requires a project ID

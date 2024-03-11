@@ -10,12 +10,12 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7/build"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/acceptancetests/testutils"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/client"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/acctest"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/terraform"
-	"github.com/microsoft/azure-devops-go-api/azuredevops/v7/build"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/acceptancetests/testutils"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/client"
 )
 
 func TestAccBuildDefinition_Basic(t *testing.T) {

@@ -3,7 +3,7 @@ package sdk
 import (
 	"strings"
 
-	"github.com/microsoft/azure-devops-go-api/azuredevops/v7"
+	"github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7"
 )
 
 // Creates a new Azure DevOps connection instance using a function that returns an authorization header string.

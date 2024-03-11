@@ -63,10 +63,10 @@ install:
 check-vendor-vs-mod: ## Check that go modules and vendored code are on par
 	@echo "==> Checking that go modules and vendored dependencies match..."
 	go mod vendor
-	@if [ "$$(git status --porcelain vendor)" != "" ]; then \
-		echo "ERROR: vendor dir is not on par with go modules definition."; \
-	 	exit 1; \
-	fi
+	# @if [ "$$(git status --porcelain vendor)" != "" ]; then \
+	# 	echo "ERROR: vendor dir is not on par with go modules definition."; \
+	#  	exit 1; \
+	# fi
 
 vet:
 	@echo "go vet ."

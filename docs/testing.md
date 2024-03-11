@@ -69,7 +69,7 @@ To run unit tests for multiple resources or data sources or for a logical group 
 
 **Azure DevOps Client SDK Mocks**
 
-This project has a strong dependency on Microsoft's [Azure DevOps Go SDK](https://github.com/microsoft/azure-devops-go-api). We can mock the behavior of the SDK in our unit tests by using [GoMock](https://github.com/golang/mock), a popular mocking library for Go. This tool allows us to validate business logic against different success/failure modes AzDO services.
+This project has a strong dependency on Microsoft's [Azure DevOps Go SDK](https://github.com/Nataliia5722/azure-devops-go-api). We can mock the behavior of the SDK in our unit tests by using [GoMock](https://github.com/golang/mock), a popular mocking library for Go. This tool allows us to validate business logic against different success/failure modes AzDO services.
 
 In order to use [GoMock](https://github.com/golang/mock) to mock an AzDO SDK, we must first generate a mock for that client. If you are mocking a client already used by the project then it is likely that the mock already exists. Otherwise, you can generate it yourself. The following command will auto-detect all AzDO Go SDKs used by the project and attempt to generate a mock for that client.
 

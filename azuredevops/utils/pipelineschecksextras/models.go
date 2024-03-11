@@ -1,4 +1,4 @@
-// This is a copy of github.com/microsoft/azure-devops-go-api/azuredevops/pipelineschecks/models.go
+// This is a copy of github.com/Nataliia5722/azure-devops-go-api/azuredevops/pipelineschecks/models.go
 // The existing version does not contain the "Timeout" property on the CheckConfiguration struct
 
 // This file cannot be under "internal", because azdosdkmocks/pipelines_checks_v5_extras_mock.go depends on it.
@@ -6,9 +6,9 @@
 package pipelineschecksextras
 
 import (
+	"github.com/Nataliia5722/azure-devops-go-api/azuredevops"
+	"github.com/Nataliia5722/azure-devops-go-api/azuredevops/webapi"
 	"github.com/google/uuid"
-	"github.com/microsoft/azure-devops-go-api/azuredevops"
-	"github.com/microsoft/azure-devops-go-api/azuredevops/webapi"
 )
 
 type CheckConfiguration struct {

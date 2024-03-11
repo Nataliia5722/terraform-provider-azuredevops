@@ -4,7 +4,7 @@ import (
 	"github.com/google/uuid"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 
-	"github.com/microsoft/azure-devops-go-api/azuredevops/v7/policy"
+	"github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7/policy"
 )
 
 // ResourceBranchPolicyWorkItemLinking schema and implementation for min reviewer policy resource

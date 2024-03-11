@@ -6,17 +6,17 @@ import (
 	"strings"
 	"time"
 
+	"github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7/core"
+	"github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7/git"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/client"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/utils"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/utils/converter"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/utils/suppress"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/utils/tfhelper"
 	"github.com/google/uuid"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/validation"
-	"github.com/microsoft/azure-devops-go-api/azuredevops/v7/core"
-	"github.com/microsoft/azure-devops-go-api/azuredevops/v7/git"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/client"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/utils"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/utils/converter"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/utils/suppress"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/utils/tfhelper"
 )
 
 // RepoInitType strategy for initializing the repo

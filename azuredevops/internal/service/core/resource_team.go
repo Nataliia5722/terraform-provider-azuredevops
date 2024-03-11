@@ -5,18 +5,18 @@ import (
 	"log"
 	"time"
 
+	"github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7/core"
+	"github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7/graph"
+	"github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7/identity"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/client"
+	securityhelper "github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/service/permissions/utils"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/utils"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/utils/converter"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/utils/tfhelper"
 	"github.com/ahmetb/go-linq"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/validation"
-	"github.com/microsoft/azure-devops-go-api/azuredevops/v7/core"
-	"github.com/microsoft/azure-devops-go-api/azuredevops/v7/graph"
-	"github.com/microsoft/azure-devops-go-api/azuredevops/v7/identity"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/client"
-	securityhelper "github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/service/permissions/utils"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/utils"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/utils/converter"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/utils/tfhelper"
 )
 
 func ResourceTeam() *schema.Resource {
@@ -501,7 +501,8 @@ func readTeamAdministrators(d *schema.ResourceData, clients *client.AggregatedCl
 			}
 		}
 	}
-	return readSubjectDescriptors(clients, &adminDescriptorList)
+
+	return readSubjectDescriptors(clients, nil)
 }
 
 func updateTeamAdministrators(d *schema.ResourceData, clients *client.AggregatedClient, team *core.WebApiTeam, subjectDescriptors *[]string) error {
@@ -585,7 +586,7 @@ func setTeamAdministratorsPermissions(d *schema.ResourceData, clients *client.Ag
 }
 
 // readIdentities returns the SubjectDescriptor for every identity passed
-func readSubjectDescriptors(clients *client.AggregatedClient, members *[]string) (*schema.Set, error) {
+func readSubjectDescriptors(clients *client.AggregatedClient, members *[]identity.GraphMembership) (*schema.Set, error) {
 	set := schema.NewSet(schema.HashString, nil)
 
 	if members == nil || len(*members) <= 0 {

@@ -1,4 +1,4 @@
-// This is a copy of github.com/microsoft/azure-devops-go-api/azuredevops/pipelineschecks/client.go
+// This is a copy of github.com/Nataliia5722/azure-devops-go-api/azuredevops/pipelineschecks/client.go
 // The existing version does not contain the "Timeout" property on the CheckConfiguration struct
 
 // This file cannot be under "internal", because azdosdkmocks/pipelines_checks_v5_extras_mock.go depends on it.
@@ -13,8 +13,8 @@ import (
 	"net/url"
 	"strconv"
 
+	"github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7"
 	"github.com/google/uuid"
-	"github.com/microsoft/azure-devops-go-api/azuredevops/v7"
 )
 
 var ResourceAreaId, _ = uuid.Parse("4a933897-0488-45af-bd82-6fd3ad33f46a")

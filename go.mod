@@ -1,4 +1,4 @@
-module github.com/microsoft/terraform-provider-azuredevops
+module github.com/Nataliia5722/terraform-provider-azuredevops
 
 go 1.19
 
@@ -10,9 +10,8 @@ require (
 	github.com/google/uuid v1.3.0
 	github.com/hashicorp/go-uuid v1.0.3
 	github.com/hashicorp/terraform-plugin-sdk/v2 v2.23.0
-	github.com/microsoft/azure-devops-go-api/azuredevops v1.0.0-b5
-	github.com/microsoft/azure-devops-go-api/azuredevops/v7 v7.1.0
-	github.com/Nataliia5722/azure-devops-go-api/azuredevops v0.1.0
+	github.com/Nataliia5722/azure-devops-go-api/azuredevops v1.0.1-b5
+	github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7 v7.2.0
 	github.com/stretchr/testify v1.7.2
 	gopkg.in/yaml.v3 v3.0.1
 )
