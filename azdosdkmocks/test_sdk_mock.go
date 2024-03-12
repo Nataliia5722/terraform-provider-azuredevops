@@ -6,8 +6,8 @@ package azdosdkmocks
 
 import (
 	context "context"
-	gomock "github.com/golang/mock/gomock"
 	test "github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7/test"
+	gomock "github.com/golang/mock/gomock"
 	io "io"
 	reflect "reflect"
 )

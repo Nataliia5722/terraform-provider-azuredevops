@@ -59,6 +59,13 @@ type groupScopeTypeValuesType struct {
 	TeamProject GroupScopeType
 }
 
+type GraphMembership struct {
+	// This field contains zero or more interesting links about the graph membership. These links may be invoked to obtain additional relationships or more detailed information about this graph membership.
+	Links               interface{} `json:"_links,omitempty"`
+	ContainerDescriptor *string     `json:"containerDescriptor,omitempty"`
+	MemberDescriptor    *string     `json:"memberDescriptor,omitempty"`
+}
+
 var GroupScopeTypeValues = groupScopeTypeValuesType{
 	Generic:     "generic",
 	ServiceHost: "serviceHost",

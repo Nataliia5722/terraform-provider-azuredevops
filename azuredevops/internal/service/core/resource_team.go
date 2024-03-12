@@ -492,12 +492,12 @@ func readTeamAdministrators(d *schema.ResourceData, clients *client.AggregatedCl
 		return nil, err
 	}
 
-	adminDescriptorList := []string{}
+	adminDescriptorList := []identity.GraphMembership{}
 	if acl != nil && acl.AcesDictionary != nil {
 		bit := *(*actionDefinitions)["ManageMembership"].Bit
 		for _, ace := range *acl.AcesDictionary {
 			if *ace.Allow&bit > 0 {
-				adminDescriptorList = append(adminDescriptorList, *ace.Descriptor)
+				adminDescriptorList = append(adminDescriptorList) //, *ace.Descriptor
 			}
 		}
 	}
@@ -581,7 +581,7 @@ func setTeamAdministratorsPermissions(d *schema.ResourceData, clients *client.Ag
 }
 
 // readIdentities returns the SubjectDescriptor for every identity passed
-func readSubjectDescriptors(clients *client.AggregatedClient, members *[]string) (*schema.Set, error) {
+func readSubjectDescriptors(clients *client.AggregatedClient, members *[]identity.GraphMembership) (*schema.Set, error) {
 	set := schema.NewSet(schema.HashString, nil)
 
 	if members == nil || len(*members) <= 0 {

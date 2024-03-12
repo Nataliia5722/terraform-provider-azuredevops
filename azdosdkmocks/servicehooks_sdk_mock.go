@@ -8,10 +8,10 @@ import (
 	context "context"
 	reflect "reflect"
 
-	gomock "github.com/golang/mock/gomock"
 	forminput "github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7/forminput"
 	notification "github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7/notification"
 	servicehooks "github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7/servicehooks"
+	gomock "github.com/golang/mock/gomock"
 )
 
 // MockServicehooksClient is a mock of Client interface.

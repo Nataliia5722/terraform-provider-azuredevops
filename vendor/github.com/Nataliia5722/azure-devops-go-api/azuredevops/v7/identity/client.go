@@ -77,7 +77,7 @@ type Client interface {
 	// [Preview API]
 	ReadMemberOf(context.Context, ReadMemberOfArgs) (*string, error)
 	// [Preview API]
-	ReadMembers(context.Context, ReadMembersArgs) (*[]string, error)
+	ReadMembers(context.Context, ReadMembersArgs) (*[]GraphMembership, error)
 	// [Preview API]
 	ReadMembersOf(context.Context, ReadMembersOfArgs) (*[]string, error)
 	// [Preview API]
@@ -877,7 +877,7 @@ type ReadMemberOfArgs struct {
 }
 
 // [Preview API]
-func (client *ClientImpl) ReadMembers(ctx context.Context, args ReadMembersArgs) (*[]string, error) {
+func (client *ClientImpl) ReadMembers(ctx context.Context, args ReadMembersArgs) (*[]GraphMembership, error) {
 	routeValues := make(map[string]string)
 	if args.ContainerId == nil || *args.ContainerId == "" {
 		return nil, &azuredevops.ArgumentNilOrEmptyError{ArgumentName: "args.ContainerId"}
@@ -894,7 +894,7 @@ func (client *ClientImpl) ReadMembers(ctx context.Context, args ReadMembersArgs)
 		return nil, err
 	}
 
-	var responseValue []string
+	var responseValue []GraphMembership
 	err = client.Client.UnmarshalCollectionBody(resp, &responseValue)
 	return &responseValue, err
 }

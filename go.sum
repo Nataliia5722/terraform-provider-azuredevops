@@ -8,6 +8,7 @@ github.com/Nataliia5722/azure-devops-go-api/azuredevops v1.0.2-b5 h1:o9KW0C4iGX5
 github.com/Nataliia5722/azure-devops-go-api/azuredevops v1.0.2-b5/go.mod h1:szF+zgsBus+HADQr+oyBCMYNmZnT44IvW0cNgpBkW1s=
 github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7 v7.1.0 h1:mmJCWLe63QvybxhW1iBmQWEaCKdc4SKgALfTNZ+OphU=
 github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7 v7.1.0/go.mod h1:mDunUZ1IUJdJIRHvFb+LPBUtxe3AYB5MI6BMXNg8194=
+github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7 v7.2.0 h1:/TVqyV9MCG0GbCeNtIyUU07Ww9gtakCDjcvG7MtqrVY=
 github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7 v7.2.0/go.mod h1:bPrFlB72MuJK/OBadnRMD5zJlC1Sz0OJ0ziD3Dj3LNk=
 github.com/ProtonMail/go-crypto v0.0.0-20210428141323-04723f9f07d7 h1:YoJbenK9C67SkzkDfmQuVln04ygHj3vjZfd9FL+GmQQ=
 github.com/ProtonMail/go-crypto v0.0.0-20210428141323-04723f9f07d7/go.mod h1:z4/9nQmJSSwwds7ejkxaJwO37dru3geImFUdJlaLzQo=

@@ -6,10 +6,10 @@ package azdosdkmocks
 
 import (
 	context "context"
-	gomock "github.com/golang/mock/gomock"
-	uuid "github.com/google/uuid"
 	delegatedauthorization "github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7/delegatedauthorization"
 	identity "github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7/identity"
+	gomock "github.com/golang/mock/gomock"
+	uuid "github.com/google/uuid"
 	reflect "reflect"
 )
 
