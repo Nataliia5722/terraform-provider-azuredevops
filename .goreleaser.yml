@@ -6,7 +6,6 @@ builds:
   goos:
   - linux
   - windows
-  - darwin
 archives:
 - name_template: "{{ .ProjectName }}_{{ .Tag }}_{{ .Os }}_{{ .Arch }}"
   format_overrides:
