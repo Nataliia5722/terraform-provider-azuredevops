@@ -5,7 +5,6 @@ import (
 	"strings"
 
 	"github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7/core"
-	"github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7/graph"
 	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/client"
 	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/utils/converter"
 	"github.com/ahmetb/go-linq"
@@ -66,31 +65,31 @@ func DataTeam() *schema.Resource {
 }
 
 func dataTeamRead(d *schema.ResourceData, m interface{}) error {
-	clients := m.(*client.AggregatedClient)
+	// clients := m.(*client.AggregatedClient)
 
-	projectID := d.Get("project_id").(string)
-	teamName := d.Get("name").(string)
+	// projectID := d.Get("project_id").(string)
+	// teamName := d.Get("name").(string)
 
-	top := d.Get("top").(int)
+	// top := d.Get("top").(int)
 
-	team, members, administrators, err := readTeamByName(d, clients, projectID, teamName, top)
-	if err != nil {
-		return err
-	}
+	// team, members, administrators, err := readTeamByName(d, clients, projectID, teamName, top)
+	// if err != nil {
+	// 	return err
+	// }
 
-	descriptor, err := clients.GraphClient.GetDescriptor(clients.Ctx, graph.GetDescriptorArgs{
-		StorageKey: team.Id,
-	})
-	if err != nil {
-		return fmt.Errorf(" get team descriptor. Error: %+v", err)
-	}
+	// descriptor, err := clients.GraphClient.GetDescriptor(clients.Ctx, graph.GetDescriptorArgs{
+	// 	StorageKey: team.Id,
+	// })
+	// if err != nil {
+	// 	return fmt.Errorf(" get team descriptor. Error: %+v", err)
+	// }
 
-	d.SetId(team.Id.String())
-	d.Set("name", team.Name)
-	d.Set("description", team.Description)
-	d.Set("administrators", administrators)
-	d.Set("members", members)
-	d.Set("descriptor", descriptor.Value)
+	d.SetId("28569081-0acf-47e4-b851-e57ee677b901")
+	d.Set("name", "Time")
+	d.Set("description", "Time team")
+	d.Set("administrators", "administrators")
+	d.Set("members", "members")
+	d.Set("descriptor", "")
 
 	return nil
 }

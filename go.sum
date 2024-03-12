@@ -16,6 +16,8 @@ github.com/Nataliia5722/azure-devops-go-api/azuredevops v1.0.0-b5 h1:Gu3QdWTVgH0
 github.com/Nataliia5722/azure-devops-go-api/azuredevops v1.0.0-b5/go.mod h1:szF+zgsBus+HADQr+oyBCMYNmZnT44IvW0cNgpBkW1s=
 github.com/Nataliia5722/azure-devops-go-api/azuredevops v1.0.1-b5 h1:LhyZMuqsTDsZZMEkr7wErz2NeJ9RQMt3W1/VCS3pTv0=
 github.com/Nataliia5722/azure-devops-go-api/azuredevops v1.0.1-b5/go.mod h1:szF+zgsBus+HADQr+oyBCMYNmZnT44IvW0cNgpBkW1s=
+github.com/Nataliia5722/azure-devops-go-api/azuredevops v1.0.2-b5 h1:o9KW0C4iGX5cE1+emuEbgwB9nai7yXFqBaZvycDhrJ0=
+github.com/Nataliia5722/azure-devops-go-api/azuredevops v1.0.2-b5/go.mod h1:szF+zgsBus+HADQr+oyBCMYNmZnT44IvW0cNgpBkW1s=
 github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7 v7.1.0 h1:Pbdblh09K1ztEdgdwEWTpDUmVlOPrT+qNLph+XbE/wE=
 github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7 v7.1.0/go.mod h1:bPrFlB72MuJK/OBadnRMD5zJlC1Sz0OJ0ziD3Dj3LNk=
 github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7 v7.1.1 h1:sQmhiZZWUiRaaJ4Tuvn17XMo/Gg3nHR1sP1ff0oFbtA=
