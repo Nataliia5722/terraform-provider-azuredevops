@@ -9,8 +9,8 @@ import (
 	"strings"
 	"unicode/utf16"
 
+	"github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7/licensing"
 	"github.com/google/uuid"
-	"github.com/microsoft/azure-devops-go-api/azuredevops/v7/licensing"
 )
 
 // String Get a pointer to a string

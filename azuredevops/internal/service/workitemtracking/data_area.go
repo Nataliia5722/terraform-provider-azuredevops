@@ -1,8 +1,8 @@
 package workitemtracking
 
 import (
+	"github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7/workitemtracking"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
-	"github.com/microsoft/azure-devops-go-api/azuredevops/v7/workitemtracking"
 	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/client"
 	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/service/workitemtracking/utils"
 )

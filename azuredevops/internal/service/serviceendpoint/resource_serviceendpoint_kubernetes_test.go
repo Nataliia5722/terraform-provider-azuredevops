@@ -18,7 +18,7 @@ import (
 
 	"github.com/google/uuid"
 
-	"github.com/microsoft/azure-devops-go-api/azuredevops/v7/serviceendpoint"
+	"github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7/serviceendpoint"
 )
 
 const errMsgCreateServiceEndpoint = "CreateServiceEndpoint() Failed"

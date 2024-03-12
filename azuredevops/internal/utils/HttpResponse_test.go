@@ -3,7 +3,7 @@ package utils
 import (
 	"testing"
 
-	"github.com/microsoft/azure-devops-go-api/azuredevops/v7"
+	"github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7"
 )
 
 func TestResponseContainsStatusMessage(t *testing.T) {
