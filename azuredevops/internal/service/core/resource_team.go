@@ -354,14 +354,19 @@ func flattenTeam(d *schema.ResourceData, team *core.WebApiTeam, members *schema.
 }
 
 func readTeamMembers(clients *client.AggregatedClient, team *core.WebApiTeam) (*schema.Set, error) {
-	members, err := clients.IdentityClient.ReadMembers(clients.Ctx, identity.ReadMembersArgs{
+	membersList, err := clients.IdentityClient.ReadMembers(clients.Ctx, identity.ReadMembersArgs{
 		ContainerId: converter.String(team.Id.String()),
 	})
 	if err != nil {
 		return nil, err
 	}
 
-	return readSubjectDescriptors(clients, members)
+	var members []string
+	for _, member := range *membersList {
+		members = append(members, *member.MemberDescriptor)
+	}
+
+	return readSubjectDescriptors(clients, &members)
 }
 
 func setTeamMembers(clients *client.AggregatedClient, team *core.WebApiTeam, subjectDescriptors *[]string) error {
@@ -501,7 +506,7 @@ func readTeamAdministrators(d *schema.ResourceData, clients *client.AggregatedCl
 			}
 		}
 	}
-	return readSubjectDescriptors(clients, nil)
+	return readSubjectDescriptors(clients, &adminDescriptorList)
 }
 
 func updateTeamAdministrators(d *schema.ResourceData, clients *client.AggregatedClient, team *core.WebApiTeam, subjectDescriptors *[]string) error {
@@ -585,7 +590,7 @@ func setTeamAdministratorsPermissions(d *schema.ResourceData, clients *client.Ag
 }
 
 // readIdentities returns the SubjectDescriptor for every identity passed
-func readSubjectDescriptors(clients *client.AggregatedClient, members *[]identity.GraphMembership) (*schema.Set, error) {
+func readSubjectDescriptors(clients *client.AggregatedClient, members *[]string) (*schema.Set, error) {
 	set := schema.NewSet(schema.HashString, nil)
 
 	if members == nil || len(*members) <= 0 {
