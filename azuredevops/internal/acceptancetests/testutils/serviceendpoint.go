@@ -4,10 +4,10 @@ import (
 	"fmt"
 
 	"github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7/serviceendpoint"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/client"
 	"github.com/google/uuid"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/terraform"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/client"
 )
 
 // CheckServiceEndpointExistsWithName verifies that a service endpoint of a particular type exists in the state,

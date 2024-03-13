@@ -27,8 +27,8 @@ import (
 	"github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7/servicehooks"
 	"github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7/taskagent"
 	"github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7/workitemtracking"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/utils/pipelineschecksextras"
-	"github.com/microsoft/terraform-provider-azuredevops/version"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/utils/pipelineschecksextras"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/version"
 )
 
 // AggregatedClient aggregates all of the underlying clients into a single data

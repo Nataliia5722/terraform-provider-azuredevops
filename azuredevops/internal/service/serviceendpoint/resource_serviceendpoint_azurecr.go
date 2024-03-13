@@ -6,12 +6,12 @@ import (
 	"time"
 
 	"github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7/serviceendpoint"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/client"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/utils"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/utils/converter"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/utils/tfhelper"
 	"github.com/google/uuid"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/client"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/utils"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/utils/converter"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/utils/tfhelper"
 )
 
 // ResourceServiceEndpointAzureCR schema and implementation for ACR service endpoint resource

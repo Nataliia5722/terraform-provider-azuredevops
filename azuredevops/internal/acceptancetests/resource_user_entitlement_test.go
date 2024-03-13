@@ -11,13 +11,13 @@ import (
 	"testing"
 
 	"github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7/memberentitlementmanagement"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/acceptancetests/testutils"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/client"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/utils"
 	"github.com/golang/mock/gomock"
 	"github.com/google/uuid"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/terraform"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/acceptancetests/testutils"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/client"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/utils"
 )
 
 func TestAccUserEntitlement_Create(t *testing.T) {

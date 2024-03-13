@@ -9,11 +9,11 @@ import (
 	"errors"
 	"testing"
 
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azdosdkmocks"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/client"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/utils/converter"
 	"github.com/golang/mock/gomock"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
-	"github.com/microsoft/terraform-provider-azuredevops/azdosdkmocks"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/client"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/utils/converter"
 	"github.com/stretchr/testify/require"
 
 	"github.com/google/uuid"

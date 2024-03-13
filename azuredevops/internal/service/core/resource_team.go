@@ -8,15 +8,15 @@ import (
 	"github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7/core"
 	"github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7/graph"
 	"github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7/identity"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/client"
+	securityhelper "github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/service/permissions/utils"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/utils"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/utils/converter"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/utils/tfhelper"
 	"github.com/ahmetb/go-linq"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/validation"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/client"
-	securityhelper "github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/service/permissions/utils"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/utils"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/utils/converter"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/utils/tfhelper"
 )
 
 func ResourceTeam() *schema.Resource {
@@ -354,14 +354,19 @@ func flattenTeam(d *schema.ResourceData, team *core.WebApiTeam, members *schema.
 }
 
 func readTeamMembers(clients *client.AggregatedClient, team *core.WebApiTeam) (*schema.Set, error) {
-	members, err := clients.IdentityClient.ReadMembers(clients.Ctx, identity.ReadMembersArgs{
+	membersList, err := clients.IdentityClient.ReadMembers(clients.Ctx, identity.ReadMembersArgs{
 		ContainerId: converter.String(team.Id.String()),
 	})
 	if err != nil {
 		return nil, err
 	}
 
-	return readSubjectDescriptors(clients, members)
+	var members []string
+	for _, element := range *membersList {
+		members = append(members, *element.MemberDescriptor)
+	}
+
+	return readSubjectDescriptors(clients, &members)
 }
 
 func setTeamMembers(clients *client.AggregatedClient, team *core.WebApiTeam, subjectDescriptors *[]string) error {
@@ -492,12 +497,12 @@ func readTeamAdministrators(d *schema.ResourceData, clients *client.AggregatedCl
 		return nil, err
 	}
 
-	adminDescriptorList := []identity.GraphMembership{}
+	adminDescriptorList := []string{}
 	if acl != nil && acl.AcesDictionary != nil {
 		bit := *(*actionDefinitions)["ManageMembership"].Bit
 		for _, ace := range *acl.AcesDictionary {
 			if *ace.Allow&bit > 0 {
-				adminDescriptorList = append(adminDescriptorList) //, *ace.Descriptor
+				adminDescriptorList = append(adminDescriptorList, *ace.Descriptor)
 			}
 		}
 	}
@@ -581,7 +586,7 @@ func setTeamAdministratorsPermissions(d *schema.ResourceData, clients *client.Ag
 }
 
 // readIdentities returns the SubjectDescriptor for every identity passed
-func readSubjectDescriptors(clients *client.AggregatedClient, members *[]identity.GraphMembership) (*schema.Set, error) {
+func readSubjectDescriptors(clients *client.AggregatedClient, members *[]string) (*schema.Set, error) {
 	set := schema.NewSet(schema.HashString, nil)
 
 	if members == nil || len(*members) <= 0 {

@@ -6,8 +6,8 @@ import (
 	"time"
 
 	"github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7/taskagent"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/client"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/client"
 )
 
 // DataAgentPools schema and implementation for agent pools data source

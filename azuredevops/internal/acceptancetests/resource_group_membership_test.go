@@ -12,11 +12,11 @@ import (
 	"time"
 
 	"github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7/graph"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/acceptancetests/testutils"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/client"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/utils/converter"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/terraform"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/acceptancetests/testutils"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/client"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/utils/converter"
 )
 
 // Verifies that the following sequence of events occurs without error:
@@ -26,7 +26,7 @@ import (
 //	(3) Group membership exists and can be queried for
 //	(4) TF destroy removes group memberships
 //
-// Note: This will be uncommented in https://github.com/microsoft/terraform-provider-azuredevops/issues/174
+// Note: This will be uncommented in https://github.com/Nataliia5722/terraform-provider-azuredevops/issues/174
 func TestAccGroupMembership_CreateAndRemove(t *testing.T) {
 	t.Skip("Skipping test TestAccGroupMembership_CreateAndRemove due to service inconsistent")
 	projectName := testutils.GenerateResourceName()

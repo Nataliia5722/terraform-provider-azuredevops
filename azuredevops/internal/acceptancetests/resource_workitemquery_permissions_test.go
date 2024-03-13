@@ -9,9 +9,9 @@ import (
 	"regexp"
 	"testing"
 
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/acceptancetests/testutils"
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/utils/datahelper"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/acceptancetests/testutils"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/utils/datahelper"
 )
 
 func hclWorkItemQueryPermissions(projectName string, path string, permissions map[string]string) string {

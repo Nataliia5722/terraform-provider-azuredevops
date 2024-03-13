@@ -13,9 +13,9 @@ import (
 	"strconv"
 	"testing"
 
+	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/acceptancetests/testutils"
 	"github.com/google/uuid"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
-	"github.com/microsoft/terraform-provider-azuredevops/azuredevops/internal/acceptancetests/testutils"
 )
 
 // validates that an apply followed by another apply (i.e., resource update) will be reflected in AzDO and the
