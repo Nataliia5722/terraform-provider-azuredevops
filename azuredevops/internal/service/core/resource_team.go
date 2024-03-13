@@ -361,12 +361,12 @@ func readTeamMembers(clients *client.AggregatedClient, team *core.WebApiTeam) (*
 		return nil, err
 	}
 
-	var members []string
-	for _, member := range *membersList {
-		members = append(members, *member.MemberDescriptor)
+	set := schema.NewSet(schema.HashString, nil)
+	for _, member := range *membersList.Value {
+		set.Add(member.Descriptor)
 	}
 
-	return readSubjectDescriptors(clients, &members)
+	return set, nil
 }
 
 func setTeamMembers(clients *client.AggregatedClient, team *core.WebApiTeam, subjectDescriptors *[]string) error {

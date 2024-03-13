@@ -48,12 +48,12 @@ github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/options
 github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/shared
 github.com/AzureAD/microsoft-authentication-library-for-go/apps/internal/version
 github.com/AzureAD/microsoft-authentication-library-for-go/apps/public
-# github.com/Nataliia5722/azure-devops-go-api/azuredevops v1.0.1-b5
+# github.com/Nataliia5722/azure-devops-go-api/azuredevops v1.0.3-b5
 ## explicit; go 1.12
 github.com/Nataliia5722/azure-devops-go-api/azuredevops
 github.com/Nataliia5722/azure-devops-go-api/azuredevops/system
 github.com/Nataliia5722/azure-devops-go-api/azuredevops/webapi
-# github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7 v7.2.0
+# github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7 v7.2.1
 ## explicit; go 1.12
 github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7
 github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7/accounts
