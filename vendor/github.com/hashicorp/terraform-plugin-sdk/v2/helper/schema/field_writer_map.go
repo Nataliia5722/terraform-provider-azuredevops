@@ -340,17 +340,17 @@ func (w *MapFieldWriter) setSet(
 	// problems when the old data isn't wiped first.
 	w.clearTree(addr)
 
-	// if value.(*Set) == nil {
-	// 	w.result[k+".#"] = "0"
-	// 	return nil
-	// }
+	if value.(*Set) == nil {
+		w.result[k+".#"] = "0"
+		return nil
+	}
 
-	// for code, elem := range value.(*Set).m {
-	// 	if err := w.set(append(addrCopy, code), elem); err != nil {
-	// 		return err
-	// 	}
-	// }
+	for code, elem := range value.(*Set).m {
+		if err := w.set(append(addrCopy, code), elem); err != nil {
+			return err
+		}
+	}
 
-	// w.result[k+".#"] = strconv.Itoa(value.(*Set).Len())
+	w.result[k+".#"] = strconv.Itoa(value.(*Set).Len())
 	return nil
 }

@@ -2,9 +2,12 @@ package git
 
 import (
 	"context"
+	"errors"
 	"fmt"
+	"regexp"
 	"strings"
 
+	"github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7"
 	"github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7/git"
 	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/client"
 	"github.com/Nataliia5722/terraform-provider-azuredevops/azuredevops/internal/utils"
@@ -163,6 +166,14 @@ func resourceGitRepositoryBranchRead(ctx context.Context, d *schema.ResourceData
 		if utils.ResponseWasNotFound(err) {
 			d.SetId("")
 			return nil
+		}
+		var branchErr azuredevops.WrappedError
+		if errors.As(err, &branchErr) {
+			regx := regexp.MustCompile(fmt.Sprintf("Branch \"%[1]s\" does not exist in the %[2]s repository.", shortBranchName, repoId))
+			if branchErr.Message != nil && regx.MatchString(*branchErr.Message) {
+				d.SetId("")
+				return nil
+			}
 		}
 		return diag.FromErr(fmt.Errorf("Error reading branch %q: %w", name, err))
 	}
