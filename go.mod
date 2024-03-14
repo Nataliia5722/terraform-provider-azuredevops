@@ -5,8 +5,8 @@ go 1.19
 require (
 	github.com/Azure/azure-sdk-for-go/sdk/azcore v1.4.0
 	github.com/Azure/azure-sdk-for-go/sdk/azidentity v1.2.2
-	github.com/Nataliia5722/azure-devops-go-api/azuredevops v1.0.5-b5
-	github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7 v7.2.3
+	github.com/Nataliia5722/azure-devops-go-api/azuredevops v1.0.6-b5
+	github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7 v7.2.4
 	github.com/ahmetb/go-linq v3.0.0+incompatible
 	github.com/golang/mock v1.6.0
 	github.com/google/uuid v1.3.0

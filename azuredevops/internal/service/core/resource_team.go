@@ -362,8 +362,8 @@ func readTeamMembers(clients *client.AggregatedClient, team *core.WebApiTeam) (*
 	}
 
 	set := schema.NewSet(schema.HashString, nil)
-	for _, member := range membersList.Value {
-		set.Add(member.Identity.Descriptor)
+	for _, member := range *membersList {
+		set.Add(member.Value)
 	}
 
 	return set, nil

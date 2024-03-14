@@ -16,6 +16,8 @@ github.com/Nataliia5722/azure-devops-go-api/azuredevops v1.0.4-b5 h1:Pyg0hIeckpz
 github.com/Nataliia5722/azure-devops-go-api/azuredevops v1.0.4-b5/go.mod h1:szF+zgsBus+HADQr+oyBCMYNmZnT44IvW0cNgpBkW1s=
 github.com/Nataliia5722/azure-devops-go-api/azuredevops v1.0.5-b5 h1:r1EgfeSXC9Uz9QNPuDmtsn4c/BrhfHOM0Q6gOj/+JbQ=
 github.com/Nataliia5722/azure-devops-go-api/azuredevops v1.0.5-b5/go.mod h1:szF+zgsBus+HADQr+oyBCMYNmZnT44IvW0cNgpBkW1s=
+github.com/Nataliia5722/azure-devops-go-api/azuredevops v1.0.6-b5 h1:UNcbCBhCIKiHjGJaJkpWQX0RlZhHxo4PuZ3HndWP/HY=
+github.com/Nataliia5722/azure-devops-go-api/azuredevops v1.0.6-b5/go.mod h1:szF+zgsBus+HADQr+oyBCMYNmZnT44IvW0cNgpBkW1s=
 github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7 v7.1.0 h1:Pbdblh09K1ztEdgdwEWTpDUmVlOPrT+qNLph+XbE/wE=
 github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7 v7.1.0/go.mod h1:bPrFlB72MuJK/OBadnRMD5zJlC1Sz0OJ0ziD3Dj3LNk=
 github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7 v7.1.1 h1:sQmhiZZWUiRaaJ4Tuvn17XMo/Gg3nHR1sP1ff0oFbtA=
@@ -30,6 +32,8 @@ github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7 v7.2.2 h1:gF1hiwhtG1K
 github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7 v7.2.2/go.mod h1:bPrFlB72MuJK/OBadnRMD5zJlC1Sz0OJ0ziD3Dj3LNk=
 github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7 v7.2.3 h1:6UA+PsRZhxA4SBHlCZzuHxHe/lg0SWUYIwSRSuYTy7A=
 github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7 v7.2.3/go.mod h1:bPrFlB72MuJK/OBadnRMD5zJlC1Sz0OJ0ziD3Dj3LNk=
+github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7 v7.2.4 h1:uOwiqt4+LEU9AUOXWm6Rhn8hDKCfFbqbR713bohme2M=
+github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7 v7.2.4/go.mod h1:bPrFlB72MuJK/OBadnRMD5zJlC1Sz0OJ0ziD3Dj3LNk=
 github.com/Nataliia5722/go-winio v0.4.14/go.mod h1:qXqCSQ3Xa7+6tgxaGTIe4Kpcdsi+P8jBhyzoq1bpyYA=
 github.com/Nataliia5722/go-winio v0.4.16 h1:FtSW/jqD+l4ba5iPBj9CODVtgfYAD8w2wS923g/cFDk=
 github.com/Nataliia5722/go-winio v0.4.16/go.mod h1:XB6nPKklQyQ7GC9LdcBEcBl8PF76WugXOPRXwdLnMv0=
