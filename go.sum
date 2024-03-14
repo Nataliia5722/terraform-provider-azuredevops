@@ -14,6 +14,8 @@ github.com/Nataliia5722/azure-devops-go-api/azuredevops v1.0.3-b5 h1:q3Mz/QRVTj+
 github.com/Nataliia5722/azure-devops-go-api/azuredevops v1.0.3-b5/go.mod h1:szF+zgsBus+HADQr+oyBCMYNmZnT44IvW0cNgpBkW1s=
 github.com/Nataliia5722/azure-devops-go-api/azuredevops v1.0.4-b5 h1:Pyg0hIeckpzMCJf5zFg8xgYBPoFrB/EiRVL0bBGkkos=
 github.com/Nataliia5722/azure-devops-go-api/azuredevops v1.0.4-b5/go.mod h1:szF+zgsBus+HADQr+oyBCMYNmZnT44IvW0cNgpBkW1s=
+github.com/Nataliia5722/azure-devops-go-api/azuredevops v1.0.5-b5 h1:r1EgfeSXC9Uz9QNPuDmtsn4c/BrhfHOM0Q6gOj/+JbQ=
+github.com/Nataliia5722/azure-devops-go-api/azuredevops v1.0.5-b5/go.mod h1:szF+zgsBus+HADQr+oyBCMYNmZnT44IvW0cNgpBkW1s=
 github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7 v7.1.0 h1:Pbdblh09K1ztEdgdwEWTpDUmVlOPrT+qNLph+XbE/wE=
 github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7 v7.1.0/go.mod h1:bPrFlB72MuJK/OBadnRMD5zJlC1Sz0OJ0ziD3Dj3LNk=
 github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7 v7.1.1 h1:sQmhiZZWUiRaaJ4Tuvn17XMo/Gg3nHR1sP1ff0oFbtA=
@@ -24,7 +26,10 @@ github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7 v7.2.0 h1:/TVqyV9MCG0
 github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7 v7.2.0/go.mod h1:bPrFlB72MuJK/OBadnRMD5zJlC1Sz0OJ0ziD3Dj3LNk=
 github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7 v7.2.1 h1:6xE8gODdK8uizZ4D5UQ5Uha+jp/CYaaWJgnQcZjCE4s=
 github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7 v7.2.1/go.mod h1:bPrFlB72MuJK/OBadnRMD5zJlC1Sz0OJ0ziD3Dj3LNk=
+github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7 v7.2.2 h1:gF1hiwhtG1K0d6vzhG0Z0yeVOzBsQp8dqqN+dgR1Wk8=
 github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7 v7.2.2/go.mod h1:bPrFlB72MuJK/OBadnRMD5zJlC1Sz0OJ0ziD3Dj3LNk=
+github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7 v7.2.3 h1:6UA+PsRZhxA4SBHlCZzuHxHe/lg0SWUYIwSRSuYTy7A=
+github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7 v7.2.3/go.mod h1:bPrFlB72MuJK/OBadnRMD5zJlC1Sz0OJ0ziD3Dj3LNk=
 github.com/Nataliia5722/go-winio v0.4.14/go.mod h1:qXqCSQ3Xa7+6tgxaGTIe4Kpcdsi+P8jBhyzoq1bpyYA=
 github.com/Nataliia5722/go-winio v0.4.16 h1:FtSW/jqD+l4ba5iPBj9CODVtgfYAD8w2wS923g/cFDk=
 github.com/Nataliia5722/go-winio v0.4.16/go.mod h1:XB6nPKklQyQ7GC9LdcBEcBl8PF76WugXOPRXwdLnMv0=
