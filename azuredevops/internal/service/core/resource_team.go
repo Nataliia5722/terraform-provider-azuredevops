@@ -1,8 +1,12 @@
 package core
 
 import (
+	"encoding/base64"
+	"encoding/json"
 	"fmt"
+	"io/ioutil"
 	"log"
+	"net/http"
 	"time"
 
 	"github.com/Nataliia5722/azure-devops-go-api/azuredevops/v7/core"
@@ -18,6 +22,17 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/validation"
 )
+
+type Team struct {
+	Value []struct {
+		Identity struct {
+			DisplayName string `json:"displayName"`
+			Url         string `json:"url"`
+			Id          string `json:"id"`
+			Descriptor  string `json:"descriptor"`
+		} `json:"identity"`
+	} `json:"value"`
+}
 
 func ResourceTeam() *schema.Resource {
 	return &schema.Resource{
@@ -354,16 +369,64 @@ func flattenTeam(d *schema.ResourceData, team *core.WebApiTeam, members *schema.
 }
 
 func readTeamMembers(clients *client.AggregatedClient, team *core.WebApiTeam) (*schema.Set, error) {
-	membersList, err := clients.IdentityClient.ReadMembers(clients.Ctx, identity.ReadMembersArgs{
-		ContainerId: converter.String(team.Id.String()),
-	})
+	// membersList, err := clients.IdentityClient.ReadMembers(clients.Ctx, identity.ReadMembersArgs{
+	// 	ContainerId: converter.String(team.Id.String()),
+	// })
+	// if err != nil {
+	// 	return nil, err
+	// }
+	set := schema.NewSet(schema.HashString, nil)
+
+	organization := "intappdevops"
+	project := "Time"
+	teamID := "Time Team"
+	email := "nataliia.kryvonos@intapp.com"
+	pat := "jvzcv54karzm57jrvwubz2lfy6rbqn2xyycycpnnxwrdfumw77sa"
+
+	url := fmt.Sprintf("https://dev.azure.com/%s/_apis/projects/%s/teams/%s/members?api-version=7.1-preview.2", organization, project, teamID)
+
+	client := &http.Client{}
+
+	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
-		return nil, err
+		fmt.Println("Failed to create request:", err)
+		return set, err
 	}
 
-	set := schema.NewSet(schema.HashString, nil)
-	for _, member := range *membersList {
-		set.Add(member.Value)
+	authString := fmt.Sprintf("%s:%s", email, pat)
+	encodedAuth := base64.StdEncoding.EncodeToString([]byte(authString))
+	req.Header.Set("Authorization", "Basic "+encodedAuth)
+
+	resp, err := client.Do(req)
+	if err != nil {
+		fmt.Println("Failed to get team:", err)
+		return set, err
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != http.StatusOK {
+		fmt.Println("Failed to get team, status code:", resp.StatusCode)
+	}
+
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		fmt.Println("Failed to read response body:", err)
+		return set, err
+	}
+
+	fmt.Println("Response body:", string(body))
+
+	var teamResult []Team
+	err = json.Unmarshal(body, &teamResult)
+	if err != nil {
+		fmt.Println("Failed to parse response body:", err)
+		return set, err
+	}
+
+	for _, member := range teamResult {
+		for _, value := range member.Value {
+			set.Add(value.Identity.Descriptor)
+		}
 	}
 
 	return set, nil
